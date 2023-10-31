@@ -10,30 +10,54 @@
 #include <iostream>
 #include <utility>
 
-#include "blackbox.h"
+#include "planner.h"
 /**
  * Main routine.
  * Reads in a specified dataset and outputs the time to do 'algorithm' on it
  */
-int main()
+int main(int argc, char** argv)
 {
-    // This method of timing rounds to the nearest second
-    // It doesnt have precision for very fast operations -- keep that in mind!
-    time_t begin, end;
-    begin = time(NULL);
+   srand(time(NULL));
 
-    std::string infile = "../../data/smallset.csv";
-    std::string search = "CACATCTA";
-    bool out = blackbox_exists(infile, search);
-    if (out){
-        std::cout << "Match found " << std::endl;
-    }
-    else{
-        std::cout << "Match not found " << std::endl;
-    }
-    
+	double* map;
+	int x_size, y_size;
 
-    end = time(NULL);
-    std::cout << "Total time to run: " << double(end-begin) << std::endl;;
-    return 0;
+	tie(map, x_size, y_size) = loadMap(argv[1]);
+	const int numOfDOFs = std::stoi(argv[2]);
+	double* startPos = doubleArrayFromString(argv[3]);
+	double* goalPos = doubleArrayFromString(argv[4]);
+	int whichPlanner = std::stoi(argv[5]);
+	string outputFile = argv[6];
+
+	if(!IsValidArmConfiguration(startPos, numOfDOFs, map, x_size, y_size)||
+	   !IsValidArmConfiguration(goalPos, numOfDOFs, map, x_size, y_size)) {
+		throw runtime_error("Invalid start or goal configuration!\n");
+	}
+
+	double** plan = NULL;
+	int planlength = 0;
+	RRT(map, x_size, y_size, startPos, goalPos, numOfDOFs, &plan, &planlength);		
+
+    // Solution's path should start with startPos and end with goalPos
+    if (!equalDoubleArrays(plan[0], startPos, numOfDOFs) || 
+    	!equalDoubleArrays(plan[planlength-1], goalPos, numOfDOFs)) {
+		throw std::runtime_error("Start or goal position not matching");
+	}
+
+	/** Saves the solution to output file
+	 * Do not modify the output log file output format as it is required for visualization.
+	 */
+	std::ofstream m_log_fstream;
+	m_log_fstream.open(outputFile, std::ios::trunc); // Creates new or replaces existing file
+	if (!m_log_fstream.is_open()) {
+		throw std::runtime_error("Cannot open file");
+	}
+	m_log_fstream << argv[1] << endl; // Write out map name first
+	/// Then write out all the joint angles in the plan sequentially
+	for (int i = 0; i < planlength; ++i) {
+		for (int k = 0; k < numOfDOFs; ++k) {
+			m_log_fstream << plan[i][k] << ",";
+		}
+		m_log_fstream << endl;
+	}
 }
