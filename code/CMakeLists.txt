@@ -91,8 +91,8 @@ set(entry_dir ${CMAKE_SOURCE_DIR}/entry)
 # You will have to write your own CMakeLists.txt in the lib folder
 # You will also have to modify the src CMakeLists.txt to link with libs
 # TIP: You should probably just copy and modify a CS 225 assignment at this point!
-#set(lib_dir ${CMAKE_SOURCE_DIR}/lib)
-#add_subdirectory(${lib_dir})
+# set(lib_dir ${CMAKE_SOURCE_DIR}/lib)
+# add_subdirectory(${lib_dir})
 
 # Run CMakeLists in src_dir to build the student's code.
 add_subdirectory(${src_dir})
