@@ -73,6 +73,7 @@ For test cases (4) and (5), we will be finished with a complete execution of fin
 
 
 4. **Special Visualizing Testing Approach** `visualizer.py`
+
 This is an extra way of vividly getting the result and verify it with a visualizer python file that prints out all the stages of the path planning use the data from planner.cpp. Using matlab, we'd like to have a gif file that can even animate the process so that we can asure no collisions or out-of-bounds results are created.
 
 ## Data Description
