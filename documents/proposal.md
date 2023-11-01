@@ -21,6 +21,7 @@ new node in the direction of the sample. The presence of obstacles, as defined i
 
 
 
+
 ## Function I/O
 Function I/O Our RRT algorithm will mainly consist of four functions:
 
@@ -47,9 +48,13 @@ For our initial tests test(1) and test(2), we will ensure that the tree starts a
 @return A boolean that shows this extension operation's result such like succedded or not.
 ```
 This extension function has 4 main procedures:
+
 -Nearest Neighbor Search: First, after passing into our newly generated tree node, the Extending function identifies the nearest node in the current RRT tree to the randomly sampled configuration, which was showcased inside NearestNeighbor() function. This nearest neighbor serves as the starting point for extending the tree toward the random configuration.
+
 -Local Planning: Once the nearest neighbor is found, a local planning algorithm is used to determine how to extend the tree from the nearest neighbor toward the random configuration. This often involves calculating a path or trajectory that connects the nearest neighbor to the random configuration while avoiding obstacles in the configuration space.
+
 -Node Addition: If the path from the nearest neighbor to the random configuration is collision-free, a new node is added to the RRT tree, and this new node is connected to the nearest neighbor. This node represents a new state in the exploration of the configuration space.
+
 -Termination: The RRT algorithm typically continues to perform these steps until a predefined termination condition is met. This condition might include reaching the goal configuration, a maximum number of iterations, or other criteria.
 
 To test on the accuracy of this function, we rely on test case (2) that uses IsValidArmConfiguratio() function to test if any parameter within this extension is agasinsting the map restrictions such like plotting through an obstacle.
