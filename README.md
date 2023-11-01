@@ -43,10 +43,10 @@ $ ./run.sh
 The test data contains maps ranges from 30x30 to 100x100 sizes with various obstacles mapped down.
 
 ## **Documents**
-The proposal can be found in the documents/ directory.
+The proposal can be found in the `documents/` directory.
 
 ## Feedback
-All feedback from our project mentor can be found in the feedback/ directory.
+All feedback from our project mentor can be found in the `feedback/` directory.
 
 
 ## References

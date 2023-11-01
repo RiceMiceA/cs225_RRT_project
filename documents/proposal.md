@@ -84,7 +84,7 @@ This is an extra way of vividly getting the result and verify it with a visualiz
 
 ## Data Description
 
-The primary dataset for our testing will be various sizes of grid with cells marked as 1s (obstacles) and 0s (free space) that we generated manually but we'll strive to use a script to automate this process. This grid will be used to simulate a robotic environment where the algorithm will be tasked to find a feasible path from a start to a goal position, avoiding the obstacles.
+The primary dataset stores in `/data` for our testing will be various sizes of grid with cells marked as 1s (obstacles) and 0s (free space) that we generated manually but we'll strive to use a script to automate this process. This grid will be used to simulate a robotic environment where the algorithm will be tasked to find a feasible path from a start to a goal position, avoiding the obstacles.
 
 Additionally, we might introduce variations in the dataset by altering the obstacle density or introducing dynamic obstacles. These
 variations can help us better evaluate the robustness and adaptability of our implementation.
