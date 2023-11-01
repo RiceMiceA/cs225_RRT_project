@@ -1,4 +1,7 @@
-## **Getting Started**
+## **Project Summary**
+Our proposed final project is to implement the Rapidly-Exploring Random Tree (RRT) algorithm for robotics arm path planning.
+
+## **Code**
 ### **Installing matlab**
 This repository uses pip to install matlab in the docker environment. To install pip and matlab, follow the below instructions.
 ```bash
@@ -15,9 +18,8 @@ Clone this repository in your desired location by running the following command 
 # Clone the repository
 $ git clone git@github.com:RiceMiceA/cs225_RRT_project.git
 ```
-### 
 
-## **Preparing Your Code**
+### **Preparing Your Code**
 We're using cmake instead of make like the MPs. This allows for us to use libraries such as Catch2 that can be installed in your system rather than providing them with each assignment. This change does mean that for each assignment you need to use CMake to build your own custom makefiles. To do this you need to run the following in the base directory of the assignment. Which in this assignment is the mp_mazes directory.
 ```bash
 $ mkdir build
@@ -31,11 +33,21 @@ $ cmake ..
 ```
 This runs CMake to initialize the current directory which is the build directory you just made as the location to build this repository.
 
-## **Quick Run**
+### **Quick Run**
 We're planning on perfecting an sh file to quickly run the repo by using this instruction:
 ```bash
 $ ./run.sh
 ```
+
+## **Data**
+The test data contains maps ranges from 30x30 to 100x100 sizes with various obstacles mapped down.
+
+## **Documents**
+The proposal can be found in the documents/ directory.
+
+## Feedback
+All feedback from our project mentor can be found in the feedback/ directory.
+
 
 ## References
 <a id="1">[1]</a>
