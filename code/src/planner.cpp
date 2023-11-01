@@ -1,6 +1,6 @@
 /*=================================================================
  *
- * planner.c
+ * planner.cpp
  *
  *=================================================================*/
 #include "planner.h"
@@ -46,7 +46,6 @@ tuple<double*, int, int> loadMap(string filepath) {
 
 // Splits string based on deliminator
 vector<string> split(const string& str, const string& delim) {   
-		// https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c/64886763#64886763
 		const std::regex ws_re(delim);
 		return { std::sregex_token_iterator(str.begin(), str.end(), ws_re, -1), std::sregex_token_iterator() };
 }
