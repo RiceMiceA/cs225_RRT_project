@@ -1,10 +1,12 @@
 ## **Getting Started**
-### **Installing pip**
-This repository uses pip to install matlab in the docker environment. To install pip, follow the below instructions.
+### **Installing matlab**
+This repository uses pip to install matlab in the docker environment. To install pip and matlab, follow the below instructions.
 ```bash
 $ apt update
 $ apt install python3-pip
+$ pip install matplotlib
 ```
+
 ### **Cloning this Repository**
 Using the cs225_RRT_project repository requires desktop [configuration of a GitHub SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
 
