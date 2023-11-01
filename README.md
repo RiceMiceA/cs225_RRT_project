@@ -43,3 +43,6 @@ LaValle, Steven M.. “Rapidly-exploring random trees : a new tool for path plan
 
 <a id="2">[2]</a>
 (No date a) Robotic Motion Planning: RRT’s - CMU school of computer science. Available at: https://www.cs.cmu.edu/~motionplanning/lecture/lec20.pdf (Accessed: 01 November 2023). 
+
+<a id="3">[3]</a>
+Rapidly exploring random tree (2023) Wikipedia. Available at: https://en.wikipedia.org/wiki/Rapidly_exploring_random_tree (Accessed: 31 October 2023).

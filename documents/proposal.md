@@ -20,6 +20,7 @@ new node in the direction of the sample. The presence of obstacles, as defined i
 ### RRT Pseudocode
 
 ![RRT Pseudocode](https://github.com/RiceMiceA/cs225_RRT_project/blob/main/documents/pseudo_code.png)
+[3]
 
 
 ## Function I/O
