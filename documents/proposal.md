@@ -17,9 +17,9 @@ Given a start and a goal, the algorithm incrementally builds a tree rooted at th
 randomly samples a point in the configuration space, then finds the nearest node in the tree to this sample, and attempts to add a
 new node in the direction of the sample. The presence of obstacles, as defined in the grid as integer 1, will be taken into account when extending the tree.
 
-### RRT Phesudo Code
+### RRT Pseudocode
 
-
+![RRT Pseudocode](https://github.com/RiceMiceA/cs225_RRT_project/blob/main/documents/pseudo_code.png)
 
 
 ## Function I/O
